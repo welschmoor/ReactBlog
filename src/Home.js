@@ -16,8 +16,7 @@ const Home = () => {
 
 
     useEffect( ()=> {
-    
-
+      
         const fetchFunction = async ()=> {
           try {
             const fetchdata = await fetch('http://localhost:8111/blogs')
@@ -28,8 +27,12 @@ const Home = () => {
     
           } catch(error) {console.error('37', error)}
         }
+
+        setTimeout(()=> {
+            fetchFunction()
+        }, 2000)
     
-        fetchFunction()
+ 
       }, [])
     
 
@@ -45,7 +48,7 @@ const Home = () => {
            {/* <Blogposts blogS={blogS} title={"Blogs Posts: "} setBlogS={setBlogS} /> */}
            {/* <Blogposts blogS={blogS.filter(e => e.id > 2)} title={"Blogs ID > 2: "} setBlogS={setBlogS} /> */}
            
-           {blogS ? <Blogposts blogS={blogS} title={"Blogs"} setBlogS={setBlogS}/> : <div className="spinner">Loading...</div> }
+           {blogS ? <Blogposts blogS={blogS} title={"Blogs"} setBlogS={setBlogS}/> : <div className="spinner">&nbsp;</div> }
            {/* <Blogposts blogS={blogS} title={"Blogs"} setBlogS={setBlogS}/> */}
 
             <div className="sidepost-col">

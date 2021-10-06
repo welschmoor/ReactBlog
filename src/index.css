@@ -1,13 +1,97 @@
-body {
+
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 125%;
+}
+
+
+
+
+/* --------------------------------------------------------------------
+                               MAIN NAVIGATION 
+----------------------------------------------------------------------*/
+
+.mainnav-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  background-color: rgb(86, 75, 148);
+}
+
+.mainnav-ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.mainnav-li {
+
+}
+.mainnav-a:link,
+.mainnav-a:visited {
+  text-decoration: none;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.mainnav-a:hover,
+.mainnav-a:active {
+  box-shadow: 0px 0px 0px 1px rgb(255, 255, 255);
+
+  border-radius: 3px ;
+}
+
+
+
+
+/* --------------------------------------------------------------------
+                              HOME
+----------------------------------------------------------------------*/
+
+.home-section-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  margin: 0px 20px;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+
+
+}
+
+svg {
+  height: 6rem;
+  width: 6rem;
+  fill: black;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

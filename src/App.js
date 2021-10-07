@@ -1,4 +1,5 @@
 
+import Error404 from './Error404.js'
 import Create from './Create.js'
 import Home from "./Home.js"
 import About from "./About.js"
@@ -21,6 +22,7 @@ function App() {
           <Route path="/blogs/:id">  <BlogDetails />  </Route>
           <Route path="/" exact={true}>  <Home />  </Route>
         
+          <Route path="*">  <Error404 />  </Route>
         </Switch>
       </div>
     </div>

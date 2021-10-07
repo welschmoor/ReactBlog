@@ -1,6 +1,7 @@
 
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Blogposts from "./Blogposts.js"
+import useData from "./customHooks.js"
 
 // const blogData = [
 //     { id: 1, title: 'We moved to a new house!', paragraph: 'So, how is it going everyone', },
@@ -12,28 +13,28 @@ import Blogposts from "./Blogposts.js"
 
 
 const Home = () => {
-    const [blogS, setBlogS] = useState(null)
+    const { blogS, setBlogS } = useData('http://localhost:8111/blogs')
+
+    // const [blogS, setBlogS] = useState(null)
 
 
-    useEffect( ()=> {
+    // useEffect( ()=> {
       
-        const fetchFunction = async ()=> {
-          try {
-            const fetchdata = await fetch('http://localhost:8111/blogs')
-            const datajson = await fetchdata.json()
+    //     const fetchFunction = async ()=> {
+    //       try {
+    //         const fetchdata = await fetch('http://localhost:8111/blogs')
+    //         const datajson = await fetchdata.json()
 
-            console.log('json parsed: ', datajson)
-            setBlogS(datajson)
+    //         console.log('json parsed: ', datajson)
+    //         setBlogS(datajson)
     
-          } catch(error) {console.error('37', error)}
-        }
+    //       } catch(error) {console.error('37', error)}
+    //     }
 
-        setTimeout(()=> {
-            fetchFunction()
-        }, 2000)
-    
- 
-      }, [])
+    //     setTimeout(()=> {
+    //         fetchFunction()
+    //     }, 2000)
+    //   }, [])
     
 
     return (
@@ -44,13 +45,9 @@ const Home = () => {
                 <p>Kek</p>
                 <p>Kek</p>
             </div>
-
-           {/* <Blogposts blogS={blogS} title={"Blogs Posts: "} setBlogS={setBlogS} /> */}
-           {/* <Blogposts blogS={blogS.filter(e => e.id > 2)} title={"Blogs ID > 2: "} setBlogS={setBlogS} /> */}
            
            {blogS ? <Blogposts blogS={blogS} title={"Blogs"} setBlogS={setBlogS}/> : <div className="spinner">&nbsp;</div> }
-           {/* <Blogposts blogS={blogS} title={"Blogs"} setBlogS={setBlogS}/> */}
-
+       
             <div className="sidepost-col">
                 <p>Kek</p>
                 <p>Kek</p>

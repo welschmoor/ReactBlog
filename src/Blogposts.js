@@ -1,5 +1,6 @@
 
 import React from "react"
+import { Link } from "react-router-dom"
 
 
 const Blogposts = (props) => {
@@ -19,7 +20,9 @@ const Blogposts = (props) => {
         {props.blogS.map(each => {
             return (
                 <div className="blogpost" key={each.id}>
+                    <Link to={`/blogs/${each.id}`}>
                     <h3 className="blogheading">{each.title}</h3>
+                    </Link>
                     <p className="blogtext">{each.body}</p>
                     <button type="button" onClick={() => deleteHandler(each.id)}>X</button>
                 </div>)

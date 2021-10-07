@@ -95,3 +95,23 @@ html {
   border-right: 3px solid black; */
   animation: spinner 0.6s linear infinite;
 }
+
+
+/* --------------------------------------------------------------------
+                              CREATE
+----------------------------------------------------------------------*/
+.create-maindiv {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.title,
+.textarea,
+.btn-submit {
+  display: block;
+  width: 600px;
+}
+
+.textarea {
+  height: 300px;
+}
